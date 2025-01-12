@@ -9,7 +9,6 @@ import Auth from 'layouts/auth';
 import { useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import routes from 'routes';
-import SignIn from 'views/auth/signIn';
 import TaskDetail from 'views/paktyping/TaskDetails';
 
 // Custom Chakra theme

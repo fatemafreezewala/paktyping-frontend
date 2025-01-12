@@ -1,12 +1,12 @@
 // Chakra imports
-import { Box, Flex, Icon, Text } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
 function AuthIllustration(props: {
   children: JSX.Element | string;
   illustrationBackground: string;
 }) {
-  const { children, illustrationBackground } = props;
+  const { children } = props;
   // Chakra color mode
   return (
     <Flex position="relative" h="max-content">

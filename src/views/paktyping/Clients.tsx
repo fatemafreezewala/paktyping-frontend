@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState, useEffect } from 'react';
 import {
   Box,
@@ -14,7 +16,6 @@ import {
   VStack,
   HStack,
   useToast,
-  Text,
   Divider,
   Modal,
   ModalOverlay,

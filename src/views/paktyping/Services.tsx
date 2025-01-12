@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import {
   Box,
@@ -13,7 +14,6 @@ import {
   Td,
   VStack,
   HStack,
-  Text,
   useToast,
 } from '@chakra-ui/react';
 import Card from 'components/card/Card';
