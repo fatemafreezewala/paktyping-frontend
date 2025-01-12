@@ -24,10 +24,6 @@ jobs:
       - name: Install Dependencies
         run: npm install --force # `npm ci` is optimized for CI environments
 
-      # Step 4: Build the React app
-      - name: Build React App
-        run: npm run build
-
       # Step 5: Deploy the app to the server
       - name: Deploy React App
         run: |
