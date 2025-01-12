@@ -1,0 +1,51 @@
+name: Deploy React App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      # Checkout the code from the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 23
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Build the React app
+      - name: Build React App
+        run: npm run build
+
+      # Deploy the app to the server
+      - name: Deploy React App
+        run: |
+          # Define the target directory
+          TARGET_DIR="/home/deployer/actions-runner-front/build"
+
+          # Ensure the target directory exists
+          sudo mkdir -p $TARGET_DIR
+
+          # Remove old build files
+          sudo rm -rf $TARGET_DIR/*
+
+          # Copy the new build to the target directory
+          sudo cp -r build/* $TARGET_DIR/
+
+          # Adjust permissions for Nginx
+          sudo chmod -R 755 $TARGET_DIR
+          sudo chown -R www-data:www-data $TARGET_DIR
+
+          # Reload Nginx to apply changes
+          sudo systemctl reload nginx
