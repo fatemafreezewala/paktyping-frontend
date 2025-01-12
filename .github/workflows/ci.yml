@@ -48,5 +48,5 @@ jobs:
           sudo chmod -R 755 $TARGET_DIR
           sudo chown -R www-data:www-data $TARGET_DIR
 
-          # Reload Nginx to apply changes
+          # Reeload Nginx to apply changes
           sudo systemctl reload nginx
