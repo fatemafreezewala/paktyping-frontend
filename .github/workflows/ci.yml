@@ -22,7 +22,7 @@ jobs:
 
       # Step 3: Install dependencies
       - name: Install Dependencies
-        run: npm ci # `npm ci` is optimized for CI environments
+        run: npm install # `npm ci` is optimized for CI environments
 
       # Step 4: Build the React app
       - name: Build React App
